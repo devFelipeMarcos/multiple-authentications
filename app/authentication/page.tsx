@@ -17,10 +17,6 @@ export default function LoginPage() {
     await signIn(provider, { redirectTo: "/" });
   };
 
-  const handleLoginGoogle = async () => {
-    await signIn("google", { redirectTo: "/" });
-  };
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-950 px-4">
       <div className="w-full max-w-md bg-gray-900 text-white rounded-xl shadow-lg p-8">
@@ -39,7 +35,7 @@ export default function LoginPage() {
           </button>
 
           <button
-            onClick={() => handleLoginGoogle()}
+            onClick={() => handleLogin("google")}
             className="w-full flex items-center justify-center gap-2 bg-red-500 text-white font-medium px-4 py-3 rounded-lg hover:bg-red-600 transition"
           >
             <FaGoogle className="text-xl" />
@@ -47,7 +43,7 @@ export default function LoginPage() {
           </button>
 
           <button
-            onClick={() => handleLogin("microsoft")}
+            onClick={() => handleLogin("microsoft-entra-id")}
             className="w-full flex items-center justify-center gap-2 bg-blue-700 text-white font-medium px-4 py-3 rounded-lg hover:bg-blue-800 transition"
           >
             <FaMicrosoft className="text-xl" />
@@ -68,30 +64,6 @@ export default function LoginPage() {
           >
             <FaTwitter className="text-xl" />
             Entrar com Twitter
-          </button>
-
-          <button
-            onClick={() => handleLogin("facebook")}
-            className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white font-medium px-4 py-3 rounded-lg hover:bg-blue-700 transition"
-          >
-            <FaFacebook className="text-xl" />
-            Entrar com Facebook
-          </button>
-
-          <button
-            onClick={() => handleLogin("instagram")}
-            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-medium px-4 py-3 rounded-lg hover:opacity-90 transition"
-          >
-            <FaInstagram className="text-xl" />
-            Entrar com Instagram
-          </button>
-
-          <button
-            onClick={() => handleLogin("tiktok")}
-            className="w-full flex items-center justify-center gap-2 bg-black text-white font-medium px-4 py-3 rounded-lg hover:bg-gray-800 transition"
-          >
-            <FaTiktok className="text-xl" />
-            Entrar com TikTok
           </button>
         </div>
 

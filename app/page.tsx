@@ -25,7 +25,9 @@ export default function HomePage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-950 text-white">
       <div className="bg-gray-900 p-8 rounded-xl max-w-md w-full text-center shadow-lg">
         <img
-          src={user?.image || "/default-avatar.png"}
+          src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+            user?.name || "U S"
+          )}&background=0D8ABC&color=fff&size=128`}
           alt="Avatar"
           className="w-24 h-24 rounded-full mx-auto mb-4"
         />
